@@ -96,4 +96,12 @@ public class UserController {
     }
 
 
+    @RequestMapping("/forget_check_answer.do")
+    @ResponseBody
+    public ServerResponse forgetCheckAnswer(String username,String question,String answer){
+         return userService.checkAnswer(username,question,answer);
+
+    }
+
+
 }

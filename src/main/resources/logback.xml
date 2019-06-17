@@ -10,38 +10,38 @@
         </filter>
     </appender>
 
-    <appender name="dianshang" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--<File>d:/mmalllog/mmall.log</File>-->
-        <File>/Users/zhoujie/logs/dianshang.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/zhoujie/logs/dianshang.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
-            <append>true</append>
-            <maxHistory>10</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>[%d{HH:mm:ss.SSS}][%p][%c{40}][%t] %m%n</pattern>
-        </encoder>
-    </appender>
+<!--    <appender name="dianshang" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        &lt;!&ndash;<File>d:/mmalllog/mmall.log</File>&ndash;&gt;-->
+<!--        <File>/Users/zhoujie/logs/dianshang.log</File>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--&lt;!&ndash;            <fileNamePattern>/Users/zhoujie/logs/dianshang.log.%d{yyyy-MM-dd}.gz</fileNamePattern>&ndash;&gt;-->
+<!--            <append>true</append>-->
+<!--            <maxHistory>10</maxHistory>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder>-->
+<!--            <pattern>[%d{HH:mm:ss.SSS}][%p][%c{40}][%t] %m%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
 
 
-    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--<File>d:/mmalllog/error.log</File>-->
-        <File>/Users/zhoujie/logs/error.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/zhoujie/logs/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
-            <!--<fileNamePattern>d:/mmalllog/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
-            <append>true</append>
-            <maxHistory>10</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>[%d{HH:mm:ss.SSS}][%p][%c{40}][%t] %m%n</pattern>
-        </encoder>
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>ERROR</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-    </appender>
+<!--    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        &lt;!&ndash;<File>d:/mmalllog/error.log</File>&ndash;&gt;-->
+<!--&lt;!&ndash;        <File>/Users/zhoujie/logs/error.log</File>&ndash;&gt;-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--&lt;!&ndash;            <fileNamePattern>/Users/zhoujie/logs/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>&ndash;&gt;-->
+<!--            &lt;!&ndash;<fileNamePattern>d:/mmalllog/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>&ndash;&gt;-->
+<!--            <append>true</append>-->
+<!--            <maxHistory>10</maxHistory>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder>-->
+<!--            <pattern>[%d{HH:mm:ss.SSS}][%p][%c{40}][%t] %m%n</pattern>-->
+<!--        </encoder>-->
+<!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--            <level>ERROR</level>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+<!--    </appender>-->
 
     <logger name="com.dianshang" additivity="false" level="INFO" >
         <appender-ref ref="dianshang" />
