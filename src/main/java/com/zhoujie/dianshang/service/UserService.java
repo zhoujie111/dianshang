@@ -13,4 +13,6 @@ public interface UserService {
     ServerResponse checkValid(String str, String type);
 
     ServerResponse selectQuestion(String username);
+
+    ServerResponse checkAnswer(String username,String question,String answer);
 }
