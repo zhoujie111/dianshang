@@ -3,25 +3,25 @@ package com.zhoujie.dianshang.pojo;
 import java.util.Date;
 
 public class User {
-    private Integer id;
+    private Integer id;//用户ID
 
-    private String username;
+    private String username;//用户名
 
-    private String password;
+    private String password;//登陆密码
 
-    private String email;
+    private String email;//邮箱
 
-    private String phone;
+    private String phone;//手机号
 
-    private String question;
+    private String question;//问题
 
-    private String answer;
+    private String answer;//答案
 
-    private Integer role;
+    private Integer role;//角色 0 管理员 1普通人员
 
-    private Date createTime;
+    private Date createTime;//创建时间
 
-    private Date updateTime;
+    private Date updateTime;//更新时间
 
     public User(Integer id, String username, String password, String email, String phone, String question, String answer, Integer role, Date createTime, Date updateTime) {
         this.id = id;

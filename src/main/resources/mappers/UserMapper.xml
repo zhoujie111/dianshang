@@ -150,4 +150,16 @@
       update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByName" parameterType="string" resultType="User">
+    select<include refid="Base_Column_List" />
+    from mmall_user
+    where username=#{username}
+  </select>
+
+  <select id="selectByEmail" parameterType="string" resultType="User">
+    select<include refid="Base_Column_List" />
+    from mmall_user
+    where email=#{email}
+  </select>
 </mapper>
