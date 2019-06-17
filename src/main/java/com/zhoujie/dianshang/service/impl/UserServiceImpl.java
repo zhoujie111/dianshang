@@ -2,12 +2,15 @@ package com.zhoujie.dianshang.service.impl;
 
 import com.zhoujie.dianshang.common.Const;
 import com.zhoujie.dianshang.common.ServerResponse;
+import com.zhoujie.dianshang.common.TokenCache;
 import com.zhoujie.dianshang.dao.UserMapper;
 import com.zhoujie.dianshang.pojo.User;
 import com.zhoujie.dianshang.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -78,5 +81,17 @@ public class UserServiceImpl implements UserService {
             return ServerResponse.createBySuccess(question);
         }
         return ServerResponse.createByError("该用户未设置找回密码问题");
+    }
+
+    @Override
+    public ServerResponse<String> checkAnswer(String username,String question,String answer){
+        int resultCount = userMapper.checkAnswer(username,question,answer);
+        if(resultCount>0){
+            //问题、问题答案是这个用户的
+            String forgetToken = UUID.randomUUID().toString();
+            TokenCache.setKey("token_"+username,forgetToken);
+            return ServerResponse.createBySuccess(forgetToken);
+        }
+        return ServerResponse.createByError("问题的答案错误！");
     }
 }
