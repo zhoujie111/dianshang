@@ -3,7 +3,8 @@ package com.zhoujie.dianshang.common;
 public enum ResponseCode {
     SUCCESS(0,"SUCCESS"),
     FAILURE(1,"ERROR"),
-    ILLEGAL_ARGUMENT(2,"ILLEGAL_ARGUMENT");
+    ILLEGAL_ARGUMENT(2,"ILLEGAL_ARGUMENT"),
+    NEED_LOGIN(3,"NEED_LOGIN");
 
     private int code;
     private String desc;

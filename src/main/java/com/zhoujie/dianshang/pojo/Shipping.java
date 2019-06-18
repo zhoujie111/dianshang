@@ -2,30 +2,33 @@ package com.zhoujie.dianshang.pojo;
 
 import java.util.Date;
 
+/**
+ * 收货信息模块实体类
+ */
 public class Shipping {
-    private Integer id;
+    private Integer id;//主键
 
-    private Integer userId;
+    private Integer userId;//用户id
 
-    private String receiverName;
+    private String receiverName;//收货人
 
-    private String receiverPhone;
+    private String receiverPhone;//收货人固定电话
 
-    private String receiverMobile;
+    private String receiverMobile;//收货人移动电话
 
-    private String receiverProvince;
+    private String receiverProvince;//收货人所在省份
 
-    private String receiverCity;
+    private String receiverCity;//收货人所在城市
 
-    private String receiverDistrict;
+    private String receiverDistrict;//收货人区/县
 
-    private String receiverAddress;
+    private String receiverAddress;//收货人详细地址
 
-    private String receiverZip;
+    private String receiverZip;//收货人邮编
 
-    private Date createTime;
+    private Date createTime;//创建时间
 
-    private Date updateTime;
+    private Date updateTime;//最后一次更新时间
 
     public Shipping(Integer id, Integer userId, String receiverName, String receiverPhone, String receiverMobile, String receiverProvince, String receiverCity, String receiverDistrict, String receiverAddress, String receiverZip, Date createTime, Date updateTime) {
         this.id = id;

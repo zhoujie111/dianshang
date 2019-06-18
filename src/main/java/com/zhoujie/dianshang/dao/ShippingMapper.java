@@ -1,6 +1,7 @@
 package com.zhoujie.dianshang.dao;
 
 import com.zhoujie.dianshang.pojo.Shipping;
+import org.apache.ibatis.annotations.Param;
 
 public interface ShippingMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +15,6 @@ public interface ShippingMapper {
     int updateByPrimaryKeySelective(Shipping record);
 
     int updateByPrimaryKey(Shipping record);
+
+    int deleteByUserIdAndShippingId(@Param("userId") Integer userId, @Param("shippingId") Integer shippingId);
 }
